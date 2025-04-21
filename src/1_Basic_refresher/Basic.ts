@@ -34,13 +34,6 @@ export class Car {
 		return totalPrice;
 	}
 }
-
-export async function getData() {
-	return {
-		data: (await axios.get("https://jsonplaceholder.typicode.com/todos/1"))
-			.data,
-	};
-}
 //14) [ ] Create a getData function that retrieves data from "https://jsonplaceholder.typicode.com/todos/1"
 //14 note:  axios returns data in { data: (....) } key.
 // The returned data has the following object format
@@ -50,3 +43,9 @@ export async function getData() {
 //  "title": "delectus aut autem",
 //  "completed": false
 // }
+export async function getData() {
+	return {
+		data: (await axios.get("https://jsonplaceholder.typicode.com/todos/1"))
+			.data,
+	};
+}
