@@ -7,7 +7,7 @@
 //Robbers can come in an rob a customer at random (empty their accounts)
 //Robinhood can come in and relieve a customer of their loans at random
 
-class Bank {
+export class Bank {
 	balance: number = 0;
 	totalLoans: number = 0;
 	customers: Customer[] = [];
@@ -54,10 +54,10 @@ abstract class Account {
 	}
 }
 
-class Saving extends Account {}
-class Checking extends Account {}
+export class Saving extends Account {}
+export class Checking extends Account {}
 
-class Customer {
+export class Customer {
 	name: string;
 	checking: Checking = new Checking();
 	saving: Saving = new Saving();
@@ -123,12 +123,12 @@ class Customer {
 }
 
 // Random events
-function robCustomer(customer: Customer) {
+export function robCustomer(customer: Customer) {
 	console.log(`${customer.name} got robbed!`);
 	customer.emptyAccounts();
 }
 
-function robinhood(customer: Customer) {
+export function robinhood(customer: Customer) {
 	console.log(`Robinhood forgave ${customer.name}'s loans!`);
 	customer.clearLoans();
 }
