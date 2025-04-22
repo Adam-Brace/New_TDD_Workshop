@@ -5,7 +5,17 @@
 // eligible is any ages between 16 and 85
 
 export enum DriverStatus {
-  TOO_YOUNG = "too young",
-  TOO_OLD = "too old",
-  ELIGIBLE = "eligible",
+	TOO_YOUNG = "too young",
+	TOO_OLD = "too old",
+	ELIGIBLE = "eligible",
+}
+
+export function exporter(age: number) {
+	if (age < 16) {
+		return DriverStatus.TOO_YOUNG;
+	} else if (age > 85) {
+		return DriverStatus.TOO_OLD;
+	} else {
+		return DriverStatus.ELIGIBLE;
+	}
 }
